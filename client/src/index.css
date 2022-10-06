@@ -294,3 +294,28 @@ nav .logo-container .logo {
   display: flex;
   flex-direction: column;
 }
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .dashboard {
+    flex-direction: column-reverse;
+  }
+  .chat-container {
+    width: 100%;
+  }
+  .chat-display, .matches-display {
+    padding: 10px;
+    height: 30vh;
+  }
+  .dashboard .swipe-container {
+    width: 100%;
+  }
+  .chat-container .chat-container-header {
+    height: 60px;
+  }
+  .chat-container .profile, .chat-container .log-out-icon {
+    padding: 0;
+padding-left: 20px;
+padding-right: 20px;
+}
+}
