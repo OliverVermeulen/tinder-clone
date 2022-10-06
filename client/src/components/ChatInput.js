@@ -44,12 +44,14 @@ const ChatInput = ({
         placeholder="Message"
         required
       />
+      <div>
       <button className="secondary-button" onClick={addMessage}>
         ✔
       </button>
       <button className="secondary-button" onClick={refreshPage}>
         ↻
       </button>
+      </div>
     </div>
   );
 };
