@@ -295,19 +295,12 @@ nav .logo-container .logo {
   flex-direction: column;
 }
 
-.short-text {
-  display: none;
-}
 
+.short-text { display: none; }
 @media (max-width: 1200px) {
-  .short-text {
-    display: inline-block;
-  }
-  .full-text {
-    display: none;
-  }
+    .short-text { display: inline-block; }
+    .full-text { display: none; }
 }
-
 @media (min-width: 320px) and (max-width: 480px) {
   .dashboard {
     flex-direction: column-reverse;
@@ -317,8 +310,8 @@ nav .logo-container .logo {
   }
   .chat-display,
   .matches-display {
-    padding: 10px;
-    height: 30vh;
+    padding: 10px 20px 0px 20px;
+    /* height: 30vh; */
   }
   .dashboard .swipe-container {
     width: 100%;
@@ -333,7 +326,7 @@ nav .logo-container .logo {
     padding-right: 20px;
   }
   .chat-input {
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 10px;
     flex-direction: row;
   }
@@ -350,5 +343,8 @@ nav .logo-container .logo {
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+  }
+  .text-message {
+    word-break: break-all;
   }
 }

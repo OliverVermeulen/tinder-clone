@@ -10,7 +10,7 @@ const Chat = ({ descendingOrderMessages }) => {
               </div>
               <h3>{message.name}</h3>
             </div>
-            <p>{message.message}</p>
+            <p className="text-message">{message.message}</p>
           </div>
         ))}
       </div>
