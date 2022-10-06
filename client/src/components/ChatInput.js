@@ -11,6 +11,7 @@ const ChatInput = ({
   const userId = user?.user_id;
   const clickUserId = clickedUser?.user_id;
 
+  // add message
   const addMessage = async () => {
     const message = {
       timestamp: new Date().toISOString(),
@@ -29,6 +30,11 @@ const ChatInput = ({
     }
   };
 
+  // refresh page
+  const refreshPage = () => {
+    window.location.reload(false);
+  };
+
   return (
     <div className="chat-input">
       <textarea
@@ -36,12 +42,13 @@ const ChatInput = ({
         onChange={(e) => setTextArea(e.target.value)}
         className="chat-text-input"
         placeholder="Message"
+        required
       />
-      <button className="secondary-button full-text" onClick={addMessage}>
-        Submit
+      <button className="secondary-button" onClick={addMessage}>
+        ✔
       </button>
-      <button className="secondary-button short-text" onClick={addMessage}>
-      ✔
+      <button className="secondary-button" onClick={refreshPage}>
+        ↻
       </button>
     </div>
   );

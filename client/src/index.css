@@ -295,12 +295,6 @@ nav .logo-container .logo {
   flex-direction: column;
 }
 
-
-.short-text { display: none; }
-@media (max-width: 1200px) {
-    .short-text { display: inline-block; }
-    .full-text { display: none; }
-}
 @media (min-width: 320px) and (max-width: 480px) {
   .dashboard {
     flex-direction: column-reverse;
@@ -313,9 +307,9 @@ nav .logo-container .logo {
     padding: 10px 20px 0px 20px;
     /* height: 30vh; */
   }
-  .dashboard .swipe-container {
+  /* .dashboard .swipe-container {
     width: 100%;
-  }
+  } */
   .chat-container .chat-container-header {
     height: 60px;
   }
@@ -326,25 +320,38 @@ nav .logo-container .logo {
     padding-right: 20px;
   }
   .chat-input {
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 10px;
     flex-direction: row;
   }
   .secondary-button {
-    padding: 10px 16px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
     margin: 0;
   }
   .chat-text-input {
-    width: 80%;
+    width: 64%;
     border-radius: 30px;
     border: solid 2px rgb(121, 119, 119);
     font-size: 16px;
-    padding-left: 10px;
-    overflow-wrap: break-word;
+    padding: 0px 10px;
     word-wrap: break-word;
-    hyphens: auto;
   }
   .text-message {
     word-break: break-all;
   }
+  .img-container {
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 0px;
+  }
+  .dashboard .swipe-container {
+    width: 100%;
+  }
+.card {
+  width: 320px;
+  height: 570px;
+}
 }
