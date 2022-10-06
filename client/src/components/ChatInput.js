@@ -34,9 +34,13 @@ const ChatInput = ({
       <textarea
         value={textArea}
         onChange={(e) => setTextArea(e.target.value)}
+        className="chat-text-input"
       />
-      <button className="secondary-button" onClick={addMessage}>
+      <button className="secondary-button full-text" onClick={addMessage}>
         Submit
+      </button>
+      <button className="secondary-button short-text" onClick={addMessage}>
+      ✔
       </button>
     </div>
   );
