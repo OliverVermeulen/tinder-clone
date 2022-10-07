@@ -55,18 +55,18 @@ const Onboarding = () => {
         <h2>CREATE ACCOUNT</h2>
         <form onSubmit={handleSubmit}>
           <section>
-            <label htmlFor="first_name">First Name</label>
+            <label htmlFor="first_name">Name</label>
             <input
               type="text"
               id="first_name"
               name="first_name"
-              placeholder="First Name"
+              placeholder="Display Name"
               required={true}
               value={formData.first_name}
               onChange={handleChange}
             />
 
-            <label>Birthday</label>
+            <label>Date of Birth</label>
             <div className="multiple-input-container">
               <input
                 type="number"
@@ -107,7 +107,7 @@ const Onboarding = () => {
                 onChange={handleChange}
                 checked={formData.gender_identity === "man"}
               />
-              <label htmlFor="man-gender-identity">Man</label>
+              <label htmlFor="man-gender-identity">M</label>
               <input
                 type="radio"
                 id="woman-gender-identity"
@@ -116,7 +116,7 @@ const Onboarding = () => {
                 onChange={handleChange}
                 checked={formData.gender_identity === "woman"}
               />
-              <label htmlFor="woman-gender-identity">Woman</label>
+              <label htmlFor="woman-gender-identity">W</label>
               <input
                 type="radio"
                 id="more-gender-identity"
@@ -125,10 +125,10 @@ const Onboarding = () => {
                 onChange={handleChange}
                 checked={formData.gender_identity === "more"}
               />
-              <label htmlFor="more-gender-identity">More</label>
+              <label htmlFor="more-gender-identity">NB</label>
             </div>
 
-            <label htmlFor="show-gender">Show gender on my profile</label>
+            <label htmlFor="show-gender">Show Gender</label>
             <input
               type="checkbox"
               id="show-gender"
@@ -137,7 +137,7 @@ const Onboarding = () => {
               checked={formData.show_gender}
             />
 
-            <label>Show me</label>
+            <label>Looking For</label>
             <div className="multiple-input-container">
               <input
                 type="radio"
@@ -147,7 +147,7 @@ const Onboarding = () => {
                 onChange={handleChange}
                 checked={formData.gender_interest === "man"}
               />
-              <label htmlFor="man-gender-interest">Men</label>
+              <label htmlFor="man-gender-interest">M</label>
               <input
                 type="radio"
                 id="woman-gender-interest"
@@ -156,7 +156,7 @@ const Onboarding = () => {
                 onChange={handleChange}
                 checked={formData.gender_interest === "woman"}
               />
-              <label htmlFor="woman-gender-interest">Women</label>
+              <label htmlFor="woman-gender-interest">W</label>
               <input
                 type="radio"
                 id="everyone-gender-interest"
@@ -165,7 +165,7 @@ const Onboarding = () => {
                 onChange={handleChange}
                 checked={formData.gender_interest === "everyone"}
               />
-              <label htmlFor="everyone-gender-interest">Everyone</label>
+              <label htmlFor="everyone-gender-interest">All</label>
             </div>
 
             <label htmlFor="about">About Me</label>
@@ -182,12 +182,13 @@ const Onboarding = () => {
           </section>
 
           <section>
-            <label htmlFor="url">Profile Photo</label>
+            <label htmlFor="url">Profile Picture</label>
             <input
               type="url"
               id="url"
               name="url"
               required={true}
+              placeholder="Photo URL"
               onChange={handleChange}
             />
             <div className="photo-container">
