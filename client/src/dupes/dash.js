@@ -4,12 +4,7 @@ import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import ChatContainer from "../components/ChatContainer";
 import axios from "axios";
-
-import { useSpring, animated } from "react-spring";
-import { useDrag } from "@use-gesture/react";
-
-const screenHeight = window.innerHeight - 30;
-
+import Nav from "../components/Nav";
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
@@ -63,7 +58,7 @@ const Dashboard = () => {
     }
   };
 
-  console.log(user)
+  console.log(user);
 
   const swiped = (direction, swipedUserId) => {
     if (direction === "right") {
@@ -76,52 +71,19 @@ const Dashboard = () => {
     console.log(name + " left the screen!");
   };
 
-  const matchedUserIds = user?.matches.map(({user_id}) => user_id).concat(userId)
+  const matchedUserIds = user?.matches
+    .map(({ user_id }) => user_id)
+    .concat(userId);
 
-  const filteredGenderedUsers = genderedUsers?.filter(genderedUser => !matchedUserIds.includes(genderedUser.user_id))
-
-  const handlePos = useSpring({ y: 0 });
-  const bindHandlePos = useDrag((params) => {
-    const y = params.xy[1];
-    if (params.dragging) {
-      if (y >= 0 && y <= screenHeight) {
-        handlePos.y.set(y);
-      }
-    } else {
-      if (y > screenHeight / 2) {
-        handlePos.y.start(screenHeight);
-      } else {
-        handlePos.y.start(0);
-      }
-    }
-  });
+  const filteredGenderedUsers = genderedUsers?.filter(
+    (genderedUser) => !matchedUserIds.includes(genderedUser.user_id)
+  );
 
   return (
     <>
+    <Nav minimal={true} setShowModal={() => {}} showModal={false} />
       {user && (
         <div className="dashboard">
-
-<animated.div
-        {...bindHandlePos()}
-        style={{
-          y: handlePos.y,
-        }}
-        className="App-handle-container"
-      >
-        <div className="App-handle" />
-      </animated.div>
-
-      <animated.div
-        style={{
-          y: handlePos.y,
-          opacity: handlePos.y.to([0, screenHeight], [1, 0.8]),
-        }}
-        className="App-overlay"
-      />
-
-      <div className="App-bg" />
-
-
           <ChatContainer user={user} />
           <div className="swipe-container">
             <div className="card-container">
