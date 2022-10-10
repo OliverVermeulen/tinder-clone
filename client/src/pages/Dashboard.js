@@ -57,7 +57,7 @@ const Dashboard = () => {
     }
   };
 
-  console.log(user)
+  console.log(user);
 
   const swiped = (direction, swipedUserId) => {
     if (direction === "right") {
@@ -70,9 +70,13 @@ const Dashboard = () => {
     console.log(name + " left the screen!");
   };
 
-  const matchedUserIds = user?.matches.map(({user_id}) => user_id).concat(userId)
+  const matchedUserIds = user?.matches
+    .map(({ user_id }) => user_id)
+    .concat(userId);
 
-  const filteredGenderedUsers = genderedUsers?.filter(genderedUser => !matchedUserIds.includes(genderedUser.user_id))
+  const filteredGenderedUsers = genderedUsers?.filter(
+    (genderedUser) => !matchedUserIds.includes(genderedUser.user_id)
+  );
 
   return (
     <>
@@ -87,6 +91,7 @@ const Dashboard = () => {
                   key={genderedUser.user_id}
                   onSwipe={(dir) => swiped(dir, genderedUser.user_id)}
                   onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}
+                  preventSwipe={["up", "down"]}
                 >
                   <div
                     style={{ backgroundImage: "url(" + genderedUser.url + ")" }}

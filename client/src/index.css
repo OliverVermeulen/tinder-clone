@@ -366,4 +366,16 @@ nav .logo-container .logo {
   .card h3 {
     color: #fff;
   }
+
+  /* onboarding form */
+  .onboarding form {
+    display: block;
+  }
+  .onboarding form section {
+    width: unset;
+    padding: 15px;
+  }
+  .onboarding form input[type="number"] {
+    width: 15%;
+  }
 }
